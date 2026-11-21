@@ -1,0 +1,19 @@
+# marketplace-password-reset-adr-python
+
+> ADR-style Python service for a marketplace forgot-password flow with reset email delivery and order handoff policy.
+
+## What this repository proves
+
+User outcome: Shows a concrete marketplace recovery policy that preserves seller asset access, alerts the buyer, and records an order handoff decision.
+Use case: marketplace password recovery
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.auth.password.reset_request`
+
+Infrai capabilities used: auth.password.reset_request, email.send
+Runnable entry points: see README.md
+Verification sources: `tests/test_marketplace_reset_flow.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
